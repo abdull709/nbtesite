@@ -84,17 +84,17 @@ WSGI_APPLICATION = 'nbtesite.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.mysql',
-#         'NAME': env('DATABASE_NAME', default=env('DB_NAME', default='nbte_db')),
-#         'USER': env('DATABASE_USER', default=env('DB_USER', default='nbte_user')),
-#         'PASSWORD': env('DATABASE_PASSWORD', default=env('DB_PASSWORD', default='nbte_password')),
-#         'HOST': env('DATABASE_HOST', default=env('DB_HOST', default='db')),
-#         'PORT': env('DATABASE_PORT', default=env('DB_PORT', default='3306')),
-#         'OPTIONS': {'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"},
-#     }
-# }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': env('DATABASE_NAME', default=env('DB_NAME', default='nbte_db')),
+        'USER': env('DATABASE_USER', default=env('DB_USER', default='nbte_user')),
+        'PASSWORD': env('DATABASE_PASSWORD', default=env('DB_PASSWORD', default='nbte_password')),
+        'HOST': env('DATABASE_HOST', default=env('DB_HOST', default='db')),
+        'PORT': env('DATABASE_PORT', default=env('DB_PORT', default='3306')),
+        'OPTIONS': {'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"},
+    }
+}
 
 DATABASES['default'] = dj_database_url.config(
     conn_max_age=600,
