@@ -33,7 +33,7 @@ SECRET_KEY = env('DJANGO_SECRET_KEY', default='django-insecure-p4te0_t&5@xs58dw3
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['https://nbtesite-aeb70e88db45.herokuapp.com']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
