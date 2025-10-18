@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}The NSQF 9-Level Framework{% endblock %}
+
+{% block content %}
+<!-- Breadcrumb -->
+<div class="bg-light py-2">
+    <div class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb mb-0">
+                <li class="breadcrumb-item"><a href="{% url 'nbtelog:index' %}">Home</a></li>
+                <li class="breadcrumb-item active" style="color: #006838;">The NSQF 9-Level Framework</li>
+            </ol>
+        </nav>
+    </div>
+</div>
+
+<div class="container my-5">
+    <div class="row">
+        <div class="col-lg-12">
+            <h2 class="mb-4">The NSQF 9-Level Framework</h2>
+            
+            <div class="text-center">
+                <img src="{% static 'images/nsqf-levels.jpg' %}" alt="NSQF 9-Level Framework" class="img-fluid mb-4">
+            </div>
+
+            <!-- Share buttons -->
+            <div class="share-section mt-4">
+                <span class="small text-muted">Share This Page</span>
+                <a href="#" class="text-success ms-2"><i class="fab fa-facebook"></i></a>
+                <a href="#" class="text-success ms-2"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="text-success ms-2"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %} 

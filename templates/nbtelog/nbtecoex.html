@@ -1,0 +1,136 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+<!-- Breadcrumb -->
+<div class="bg-light py-2">
+    <div class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb mb-0">
+                <li class="breadcrumb-item"><a href="{% url 'nbtelog:index' %}">Home</a></li>
+                <li class="breadcrumb-item active" style="color: #006838;">NBTE Centre of Excellence</li>
+            </ol>
+        </nav>
+    </div>
+</div>
+
+<div class="container my-5">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="coex-content">
+                <h1 class="coex-title text-center mb-5">NBTE Centre of Excellence</h1>
+
+                <!-- Image -->
+                <div class="text-center mb-5">
+                    <img src="{% static 'images/slide4.jpg' %}" alt="NBTE Centre of Excellence" class="img-fluid rounded shadow">
+                </div>
+
+                <!-- UNESCO UNEVOC Logo -->
+                <div class="text-center mb-5">
+                    <img src="{% static 'images/unevoc.png' %}" alt="UNESCO UNEVOC Network Member" class="img-fluid" style="max-width: 300px;">
+                </div>
+
+                <!-- Main Content -->
+                <div class="about-content">
+                    <h2 class="section-title mb-3">ABOUT THE NBTE CENTRE OF EXCELLENCE</h2>
+                    <p class="mb-4">
+                        In December 2000, the Federal Government of Nigeria entered into an agreement with UNESCO on a project to Support the Revitalization of Technical and Vocational Education and Training (TVET) in Nigeria. (Phase I). The goal of the project was to assist the Federal and State education authorities in their efforts to revitalize, reform and expand TVET to meet the present and future needs, for rapid socio-economic development of the nation. The project was executed between 2001 and 2004 by UNESCO working closely with NBTE as the implementation agency on behalf of the Federal Government of Nigeria.
+                    </p>
+
+                    <p class="mb-4">
+                        The Phase I was instrumental to the first ever review of TVET curricula in the country, about 57 No curricula were reviewed and upgraded to international standards, as well as integrating industry needs and current technologies. These curricula and their formats are now being adopted by other ECOWAS countries.
+                    </p>
+
+                    <p class="mb-4">
+                        Due to the successes recorded in the phase I, the FGN and UNESCO once more signed the agreement for the project to Support the Revitalization of Technical and Vocational Education and Training (TVET) in Nigeria- Phase II on 17th July 2007. The goal of the project II was to assist Government, specifically, the Federal Ministry of Education (FME) and the NBTE, in their efforts to further strengthen the TVET system as part of the human resource and manpower development to meet present and future needs for rapid socio-economic development of the Nation. In particular, the second phase of the project was aimed to support the:
+                    </p>
+
+                    <ul class="mb-4">
+                        <li>implementation of the country TVET staff development system.</li>
+                        <li>improvement of the quality of content of TVE</li>
+                        <li>establishing and managing a non-formal with formal TVET to enhance employment of unskilled and illiterate youth.</li>
+                    </ul>
+
+                    <h2 class="section-title mb-3">Establishment and Mandate of NBTE Centre of Excellence</h2>
+                    <p class="mb-4">
+                        After the end of the project in 2010, the Management of NBTE, through the Governing Board established the NBTE Centre of Excellence for TVET to build on the achievements of the UNESCO project and to facilitate the capacity development of TVET personnel, to promote innovation and enhance partnership.
+                    </p>
+
+                    <p class="mb-4">
+                        The Centre formally took off on 1st January 2012. Within the short period of its existence, the Centre had organized and dozens of national capacity building activities and actively participated in international conferences.
+                    </p>
+                    
+                    <p class="mb-4">
+                        The Centre was admitted into the UNEVOC Global Network in 2012 and was appointed as the UNESCO-UNEVOC Cluster/Coordinating Centre (CCC) for the West Africa Sub-Cluster by the UNESCO International Centre for Technical and Vocational Education and Training (UNEVOC). The membership of the Centre was renewed for the period 2020 – 2023.
+                    </p>
+
+                    <h2 class="section-title mb-3">Functions of the Centre</h2>
+                    <p class="mb-4">The Centre carries out the following functions:</p>
+                    
+                    <ol class="mb-4">
+                        <li>Continuing staff development for the TVET sector and capacity building for practitioners of TVET in Nigeria and the West African region.</li>
+                        <li>Support for the establishment of more Continuing Professional Development Centres (CPDCs) in the West African region.</li>
+                        <li>Collaboration and partnerships among technical institutions in the region and globally.</li>
+                        <li>Enhancing the speedy sharing of data in various areas of TVET across the Region and internationally.</li>
+                        <li>Serve as linkage for internal and external collaboration to promote TVET goals.</li>
+                        <li>Serve as an Awarding Body for registration of Quality Assurance Managers and a training Centre for the conduct of external quality assurance for verification and certification of graduates for the National Skills Qualification (NSQ).</li>
+                        <li>Coordinate all aspects of online programmes in TVET institutions in Nigeria including the Open, Distance Flexible and eLearning (ODFeL) and monitor the implementation.</li>
+                        <li>Any activities that serve to facilitate the above key objectives to promote TVET generally.</li>
+                    </ol>
+
+                    <h2 class="section-title mb-3">Modalities of the Centre Operation</h2>
+                    <p class="mb-4">
+                        The Centre was initially conceived to operate autonomously, in line with the style of UNESCO-type institutions as it was expected to emulate and consolidate the outstanding achievements of the UNESCO-Nigeria project for the Revitalization of TVE. However, funding situation has not been very favourable and the Centre has been operating within like other Departments of the Board.
+                    </p>
+
+                    <h2 class="section-title mb-3">Successes/Achievements</h2>
+                    <p class="mb-4">Under the current management led by Prof. Bugaje, the Centre has achieved the following:</p>
+
+                    <ol class="mb-4">
+                        <li>Between 2021 and January, 2023, over 300 TVET teachers have been trained on the Board's MOODLE platform. The purpose of the training was to develop the skills and knowledge needed for Commonwealth of Learning (CoL) partners to establish moodle and efficient virtual learning environments (VLE) based on MOODLE aligned to organizational goals for flexible and blended learning programs. Currently, the COL is supporting the Board on Strengthening TVET through the design and development of 15 OER Courseware.</li>
+                        
+                        <li>The Centre is spearheading the promotion of Open, Distance and Flexible e-Learning (ODFeL) in our TVET institutions. To actualize this goal, the Centre has developed the draft National Policy, Strategy and Procedure Manual on the operations of the (ODFeL). With this, institutions are to adopt a Multi Institution eLearning Platform for NBTE to provide among others: e-Learning, Distance Learning, MOOCs and Integrated Student Information System; this gives the Board a strong regulatory control over ODFeL activities in TVET institutions. Following the approval of the draft documents, the Board has granted approval for forty (40) institutions to run the ODFeL.</li>
+                        
+                        <li>The Centre has coordinated the development of Courseware for the ODFeL in the following programmes:</li>
+                    </ol>
+
+                    <ol class="mb-4 ms-4">
+                        <li>ND Accountancy</li>
+                        <li>ND Agricultural Technology</li>
+                        <li>ND Architectural Technology</li>
+                        <li>ND Building Technology</li>
+                        <li>ND Business Administration</li>
+                        <li>ND Computer Science</li>
+                        <li>ND Estate Management & Valuation</li>
+                        <li>ND Library and Information Science</li>
+                        <li>ND Marketing</li>
+                        <li>ND Mass Communication</li>
+                        <li>ND Procurement and Supply</li>
+                        <li>ND Public Administration</li>
+                        <li>ND Quantity Surveying</li>
+                        <li>ND Science Laboratory Technology</li>
+                    </ol>
+
+                    <ol start="4">
+                        <li>The Centre for Development of Emerging Skills in ICT (CeDESI) has been established. The CeDESI is aimed to provide access to global and industry standard curricula, contents, assessment, resources for benchmarking and training for the Board and TVET institutions as well as other beneficiaries.</li>
+                        
+                        <li>The Centre of Excellence has registered and now a Cisco Network Academy Support Centre. As an Academy Support Centre, the Centre will:</li>
+                    </ol>
+
+                    <ol type="a" class="mb-4 ms-4">
+                        <li>have the opportunity to deliver a comprehensive 21st century learning experience to help students and Academies develop the foundational ICT skills needed for the Fourth Industrial Revolution (4IR).</li>
+                        
+                        <li>gain access to standards-based courses that support core academics and align to in-demand job skills and globally recognized certifications. All Polytechnics in Nigeria are expected to align to NBTE Academy Support Centre.</li>
+                        
+                        <li>have the opportunity to replicate/impact the experiences of instructors through knowledge sharing and expertise. The Board will assist other TVET institutions to optimize their use of the educational resources available in Cisco Networking Academy.</li>
+                        
+                        <li>also be recognized by Cisco and supported academies as an advocate and leader of the Networking Academy program.</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}TVET Institutions{% endblock %}
+
+{% block content %}
+<!-- Breadcrumb -->
+<div class="bg-light py-2">
+    <div class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb mb-0">
+                <li class="breadcrumb-item"><a href="{% url 'nbtelog:index' %}">Home</a></li>
+                <li class="breadcrumb-item active" style="color: #006838;">Approved Institutions</li>
+            </ol>
+        </nav>
+    </div>
+</div>
+
+<div class="container my-5">
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="mb-4">Approved Institutions</h1>
+
+            <div class="content-section">
+                <p class="mb-4">
+                    The National Board for Technical Education (NBTE) is an organ of the Federal Ministry of Education 
+                    charged with the responsibility of regulating Technical and Vocational Education and Training 
+                    (TVET) institutions in Nigeria.
+                </p>
+
+                <p class="mb-4">
+                    In response to the Federal Government of Nigeria's realization of the need to develop a critical 
+                    manpower base to execute the nation's National Development Plans initiated in the 1970s, the 
+                    National Board for Technical Education was created by an Act of Parliament (Act No. 9 of 11th 
+                    January 1977).
+                </p>
+
+                <p class="mb-4">
+                    Also, in August 1985 and January 1993 respectively, the Federal Government enacted Act 16 
+                    (Education (National Minimum Standards and Establishment of Institutions) Act and Act 9, 
+                    Education (National Minimum Standards and Establishment of Institutions) Amendment Act.
+                </p>
+
+                <p class="mb-4">
+                    <a href="#" class="text-success">Click here to view NBTE Acts</a>
+                </p>
+
+                <p class="mb-4">
+                    With these acts, the functions of the Board were created and extended to include accreditation of 
+                    academic programmes of all Technical and Vocational Education and Training (TVET) institutions as 
+                    well as establishment of institution.
+                </p>
+
+                <p class="mb-4">
+                    To view the list of approved institutions and their programs, click any of the links below:
+                </p>
+
+                <ol class="institution-list">
+                    <li><a href="#" class="text-success">Federal Polytechnics</a></li>
+                    <li><a href="#" class="text-success">State Polytechnics</a></li>
+                    <li><a href="#" class="text-success">Private Polytechnics</a></li>
+                    <li><a href="#" class="text-success">Colleges of Agriculture</a></li>
+                    <li><a href="#" class="text-success">Colleges of Health Sciences and Technology</a></li>
+                    <li><a href="#" class="text-success">Colleges of Nursing and Midwifery</a></li>
+                    <li><a href="#" class="text-success">Specialised Institutions (Monotechnics)</a></li>
+                    <li><a href="#" class="text-success">Innovation Enterprise Institutions (IEIs)</a></li>
+                    <li><a href="#" class="text-success">Vocational Enterprise Institutions</a></li>
+                    <li><a href="#" class="text-success">Technical Colleges</a></li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .institution-list {
+        padding-left: 20px;
+    }
+    .institution-list li {
+        margin-bottom: 10px;
+    }
+    .institution-list a {
+        text-decoration: none;
+    }
+    .institution-list a:hover {
+        text-decoration: underline;
+    }
+</style>
+{% endblock %} 

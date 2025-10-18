@@ -1,0 +1,189 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+<!-- Breadcrumb -->
+<div class="bg-light py-2">
+    <div class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb mb-0">
+                <li class="breadcrumb-item"><a href="{% url 'nbtelog:index' %}">Home</a></li>
+                <li class="breadcrumb-item">Departments</li>
+                <li class="breadcrumb-item active" style="color: #006838;">Academic Planning, Research, Statistics and ICT</li>
+            </ol>
+        </nav>
+    </div>
+</div>
+
+<div class="container my-5">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="department-content">
+                <h1 class="department-title text-center mb-5">Academic Planning, Research, Statistics and ICT</h1>
+
+                <!-- Introduction -->
+                <div class="section mb-5">
+                    <h2 class="section-title">Introduction</h2>
+                    <p>The Department of Academic Planning, Research, Statistics, and ICT (APRS & ICT) was one of the departments created because of the restructuring of the Board.</p>
+                </div>
+
+                <!-- Structure -->
+                <div class="section mb-5">
+                    <h2 class="section-title">Structure</h2>
+                    <p>APRS&ICT Department is made up of three divisions, namely:</p>
+                    
+                    <div class="division-section">
+                        <h3 class="division-title">1. Academic Planning Division</h3>
+                        <p>The Academic Planning division of the department comprises three units which are:</p>
+                        <ul>
+                            <li>Academic Planning unit</li>
+                            <li>Publications unit</li>
+                            <li>Library and Information unit</li>
+                        </ul>
+                    </div>
+
+                    <div class="division-section">
+                        <h3 class="division-title">2. Research and Statistics Division</h3>
+                        <p>The Research and Statistics division of the department comprises two units which are:</p>
+                        <ul>
+                            <li>Research Unit</li>
+                            <li>Statistics Unit</li>
+                        </ul>
+                    </div>
+
+                    <div class="division-section">
+                        <h3 class="division-title">3. Information and Communication Technology (ICT) Division</h3>
+                        <p>The Information and Communication Technology division of the department comprises two units which are:</p>
+                        <ul>
+                            <li>Software Development Unit</li>
+                            <li>Hardware, Networking and Maintenance Unit</li>
+                        </ul>
+                    </div>
+
+                    <div class="division-section">
+                        <h3 class="division-title">4. SIWES Unit</h3>
+                        <p>Co-ordination of Industrial Attachment of polytechnic students in collaboration with ITF</p>
+                    </div>
+                </div>
+
+                <!-- Vision and Mission -->
+                <div class="section mb-5">
+                    <h2 class="section-title">Vision Statement</h2>
+                    <p class="vision-text">To plan, coordinate, implement and drive the Federal Government's policies and NBTE's mandate on the TVET sector in a manner that is effective and efficient, quality driven, and responsive to the needs of the individual, industry, government, and other stakeholders.</p>
+
+                    <h2 class="section-title mt-4">Mission Statement</h2>
+                    <p class="mission-text">To assist management in formulation of guidelines, policies and procedures in the planning and monitoring of policy implementation and appropriate sensitization of TVET goals and objectives.</p>
+                </div>
+
+                <!-- Functions -->
+                <div class="section">
+                    <h2 class="section-title">Functions</h2>
+                    <p>The functions of the Academic Planning, Research, Statistics, and ICT Department are:</p>
+                    <div class="functions-list">
+                        <div class="function-item">
+                            <p><strong>i.</strong> Development and analysis of academic plan/briefs for development of Polytechnics.</p>
+                        </div>
+                        <div class="function-item">
+                            <p><strong>ii.</strong> Guiding and coordinating the development and periodic review of Strategic plans of NBTE and Polytechnics.</p>
+                        </div>
+                        <div class="function-item">
+                            <p><strong>iii.</strong> Monitoring of curriculum delivery in Polytechnics.</p>
+                        </div>
+                        <div class="function-item">
+                            <p><strong>iv.</strong> Undertaking tracer studies and liaison with industries on the efficacy and relevance of Polytechnic Programmes.</p>
+                        </div>
+                        <div class="function-item">
+                            <p><strong>v.</strong> Liaison with National Planning Commission and other relevant agencies to determine technological manpower needs of the nation and appropriate sensitization of Polytechnics.</p>
+                        </div>
+                        <div class="function-item">
+                            <p><strong>vi.</strong> Collecting, collating and management of data on staff, students, and facilities, as well as recurrent and capital expenditures of Nigerian Polytechnics.</p>
+                        </div>
+                        <div class="function-item">
+                            <p><strong>vii.</strong> Monitoring the state and development of Polytechnic Libraries and instructional resource centers.</p>
+                        </div>
+                        <div class="function-item">
+                            <p><strong>viii.</strong> Publication and dissemination of information on polytechnic resources, programmes, and developments.</p>
+                        </div>
+                        <div class="function-item">
+                            <p><strong>ix.</strong> Co-ordination of Industrial Attachment of polytechnic students.</p>
+                        </div>
+                        <div class="function-item">
+                            <p><strong>x.</strong> Co-ordination and promotion of Research and innovation in polytechnics.</p>
+                        </div>
+                        <div class="function-item">
+                            <p><strong>xi.</strong> Popularization of use of ICT in curriculum delivery and other management and professional functions of the Board.</p>
+                        </div>
+                        <div class="function-item">
+                            <p><strong>xii.</strong> Processing of application for license for private polytechnics and other relevant institutions.</p>
+                        </div>
+                        <div class="function-item">
+                            <p><strong>xiii.</strong> Institutional Ranking of tertiary TVET institutions under NBTE purview with the full approval and cooperation of the Board to introduce new dimension to the Board's regulatory activities. The introduction and implementation of a sector-wide process of ranking of these institutions in the country will represent a major quality assurance and efficiency-enhancement mechanism. The basis for the introduction of ranking among institutions is to among others: provide the public with information on the relative standing of institutions; promote healthy competition among institutions; stimulate the evolution of centres of excellence among the institutions and to provide additional rationale for allocation of future grants.</p>
+                        </div>
+                        <div class="function-item">
+                            <p><strong>xiv.</strong> Coordinate the publication of Directory of Accredited programmes.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Add Goals and Objectives Section -->
+                <h2 class="section-title mt-5">Goals and Objectives</h2>
+                <p>The objective of the department is to effectively perform the functions of the Board as they relate to the department. Therefore, in the next Five (5) years, the department will focus on the following:</p>
+
+                <div class="functions-list">
+                    <div class="function-item">
+                        <p><strong>i.</strong> Develop capacity for Polytechnics staff in academic planning, research, innovation and ICT.</p>
+                    </div>
+
+                    <div class="function-item">
+                        <p><strong>ii.</strong> Develop e-learning resources through the establishment of virtual libraries in NBTE and Polytechnics.</p>
+                    </div>
+
+                    <div class="function-item">
+                        <p><strong>iii.</strong> Organize the biennial Technology EXPOs to showcase projects and prototypes and national skills competition amongst students in the Polytechnics.</p>
+                    </div>
+
+                    <div class="function-item">
+                        <p><strong>iv.</strong> Create opportunities for student access and success through adequate monitoring and institutional academic plans.</p>
+                    </div>
+
+                    <div class="function-item">
+                        <p><strong>v.</strong> Improve statistical data collection and verification by the introduction of more measures/sanctions to erring and non-cooperating institutions.</p>
+                    </div>
+
+                    <div class="function-item">
+                        <p><strong>vi.</strong> Acquire necessary ICT hardware and software for the effective function of the Board.</p>
+                    </div>
+
+                    <div class="function-item">
+                        <p><strong>vii.</strong> Build Capacity of NBTE and Polytechnic staff in ICT in line with the FME Policy on ICT in Education.</p>
+                    </div>
+
+                    <div class="function-item">
+                        <p><strong>viii.</strong> Carry out ranking of institutions in order to promote healthy competition amongst them in the areas of programmes upgrade, improvement of teaching and learning environment and staff development among others.</p>
+                    </div>
+
+                    <div class="function-item">
+                        <p><strong>ix.</strong> Co-ordinate the SIWES programme in an effective and efficient manner and to ensure that students and employers derive the maximum benefits of the scheme.</p>
+                    </div>
+
+                    <div class="function-item">
+                        <p><strong>x.</strong> Sustain the existing culture of research and publication by coordinating the process of publishing the Board's major academic and research journals.</p>
+                    </div>
+                </div>
+
+                <!-- Share Section -->
+                <div class="share-section mt-5">
+                    <h5>Share This Page</h5>
+                    <div class="social-share">
+                        <a href="#" class="me-2"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="me-2"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="me-2"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %} 

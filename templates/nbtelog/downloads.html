@@ -1,0 +1,172 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load custom_filters %}
+
+{% block title %}Downloads{% endblock %}
+
+{% block content %}
+<!-- Breadcrumb -->
+<div class="bg-light py-2">
+    <div class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb mb-0">
+                <li class="breadcrumb-item"><a href="{% url 'nbtelog:index' %}">Home</a></li>
+                <li class="breadcrumb-item active" style="color: #006838;">Downloads</li>
+            </ol>
+        </nav>
+    </div>
+</div>
+
+<div class="container my-5">
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="mb-4">Downloads</h1>
+            <p class="text-muted mb-4">Access and download NBTE documents, guidelines, and resources.</p>
+
+            {% if error %}
+            <div class="alert alert-danger">
+                <i class="fas fa-exclamation-circle me-2"></i>{{ error }}
+            </div>
+            {% endif %}
+
+            {% if documents %}
+            <div class="row g-4">
+                {% for document in documents %}
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 shadow-sm document-card">
+                        <div class="card-body">
+                            <div class="document-icon mb-3">
+                                {% if document.file.name|lower|endswith:'.pdf' %}
+                                    <i class="far fa-file-pdf text-danger fa-3x"></i>
+                                {% elif document.file.name|lower|endswith:'.doc' or document.file.name|lower|endswith:'.docx' %}
+                                    <i class="far fa-file-word text-primary fa-3x"></i>
+                                {% elif document.file.name|lower|endswith:'.xls' or document.file.name|lower|endswith:'.xlsx' %}
+                                    <i class="far fa-file-excel text-success fa-3x"></i>
+                                {% elif document.file.name|lower|endswith:'.ppt' or document.file.name|lower|endswith:'.pptx' %}
+                                    <i class="far fa-file-powerpoint text-warning fa-3x"></i>
+                                {% else %}
+                                    <i class="far fa-file text-secondary fa-3x"></i>
+                                {% endif %}
+                            </div>
+                            <h5 class="card-title text-truncate">{{ document.title }}</h5>
+                            {% if document.description %}
+                            <p class="card-text text-muted small mb-3">{{ document.description|truncatechars:100 }}</p>
+                            {% endif %}
+                            <div class="document-meta small text-muted mb-3">
+                                <div><i class="far fa-calendar-alt me-2"></i>{{ document.uploaded_at|date:"F j, Y" }}</div>
+                                <div class="mt-1">
+                                    <i class="far fa-file me-2"></i>
+                                    {{ document.file.size|filesizeformat }}
+                                </div>
+                            </div>
+                            <a href="{{ document.file.url }}" 
+                               class="btn btn-outline-success btn-sm w-100" 
+                               target="_blank"
+                               download>
+                                <i class="fas fa-download me-2"></i>Download
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            {% else %}
+            <div class="alert alert-info">
+                <i class="fas fa-info-circle me-2"></i>No documents available at the moment.
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+<style>
+.document-card {
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    border: none;
+}
+
+.document-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
+}
+
+.document-icon {
+    text-align: center;
+    padding: 1rem;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+}
+
+.document-icon i {
+    font-size: 2.5rem;
+}
+
+.card-title {
+    color: #006838;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    line-height: 1.3;
+}
+
+.document-meta {
+    color: #6c757d;
+}
+
+.btn-outline-success {
+    border-color: #006838;
+    color: #006838;
+}
+
+.btn-outline-success:hover {
+    background-color: #006838;
+    color: white;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .col-md-6 {
+        padding: 0 10px;
+    }
+    
+    .document-card {
+        margin-bottom: 1rem;
+    }
+}
+
+/* Custom scrollbar for webkit browsers */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #006838;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #004025;
+}
+</style>
+
+<!-- Add this at the end of your content block -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Add loading state to download buttons
+    const downloadButtons = document.querySelectorAll('.btn-outline-success');
+    downloadButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const originalText = this.innerHTML;
+            this.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Downloading...';
+            setTimeout(() => {
+                this.innerHTML = originalText;
+            }, 2000);
+        });
+    });
+});
+</script>
+{% endblock %}
+                                        

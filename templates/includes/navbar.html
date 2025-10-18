@@ -1,0 +1,233 @@
+{% load static %}
+<!-- Top Header with Logo -->
+<div class="top-header bg-light">
+    <div class="container">
+        <div class="row align-items-center py-2">
+            <div class="col-md-6">
+                <!-- Logo -->
+                <a class="navbar-brand" href="{% url 'nbtelog:index' %}">
+                    <img src="{% static 'images/nbtelogo.jpg' %}" alt="NBTE Logo" height="80">
+                </a>
+            </div>
+            <div class="col-md-6">
+                <!-- Social Media Links -->
+                <div class="social-links text-end mb-2">
+                    <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-whatsapp"></i></a>
+                </div>
+                <!-- Search Form -->
+                <div class="search-form-container">
+                    <form class="d-flex justify-content-end" action="{% url 'nbtelog:search' %}" method="GET">
+                        <div class="search-container">
+                            <input type="search" 
+                                   name="q" 
+                                   class="form-control search-input" 
+                                   placeholder="Search NBTE.gov">
+                            <button type="submit" class="search-btn">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Main Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+    <div class="container">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav w-100 justify-content-between">
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'nbtelog:index' %}">Home</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                        About Us
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="{% url 'nbtelog:about' %}">About NBTE</a></li>
+                        <li><a class="dropdown-item" href="{% url 'nbtelog:servicom' %}">SERVICOM</a></li>
+                        <li class="dropdown-submenu">
+                            <a class="dropdown-item has-plus" href="#">
+                                Departments
+                                <span class="plus-icon">+</span>
+                            </a>
+                            <ul class="dropdown-menu submenu">
+                                <li><a class="dropdown-item" href="{% url 'nbtelog:aprs_ict' %}">APRS & ICT</a></li>
+                                <li><a class="dropdown-item" href="#">Curriculum Development</a></li>
+                                <li><a class="dropdown-item" href="#">Finance and Accounts</a></li>
+                                <li><a class="dropdown-item" href="#">Human Resources</a></li>
+                                <li><a class="dropdown-item" href="#">Inspectorate</a></li>
+                                <li><a class="dropdown-item" href="#">Internal Audit</a></li>
+                                <li><a class="dropdown-item" href="#">Monotechnic Programmes</a></li>
+                                <li><a class="dropdown-item" href="#">NTIR</a></li>
+                                <li><a class="dropdown-item" href="#">PP & D</a></li>
+                                <li><a class="dropdown-item" href="#">Polytechnic Programmes</a></li>
+                                <li><a class="dropdown-item" href="#">Procurement</a></li>
+                                <li><a class="dropdown-item" href="#">VT & SD</a></li>
+                            </ul>
+                        </li>
+                        <li><a class="dropdown-item" href="{% url 'nbtelog:nbtecoex' %}">NBTE CoEx</a></li>
+                        <li><a class="dropdown-item" href="#">NBTE Liaison Office</a></li>
+                        <li><a class="dropdown-item" href="#">Zonal Offices</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'nbtelog:tvet_institutions' %}">TVET Institutions</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                        ODFeL
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="{% url 'nbtelog:odfel' %}">ODFeL</a></li>
+                        <li><a class="dropdown-item" href="{% url 'nbtelog:odfel_guidelines' %}">ODFeL Guidelines</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                        Skills
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="{% url 'nbtelog:nsq_benefits' %}">Benefits of NSQ</a></li>
+                        <li><a class="dropdown-item" href="{% url 'nbtelog:nsq' %}">NSQ</a></li>
+                        <li><a class="dropdown-item" href="{% url 'nbtelog:nsqf' %}">NSQF</a></li>
+                        <li><a class="dropdown-item" href="{% url 'nbtelog:nsqf_levels' %}">9-Level Framework</a></li>
+                        <li><a class="dropdown-item" href="{% url 'nbtelog:research_development' %}">R & D</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                        NBTE Digital QA
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Guidelines</a></li>
+                        <li><a class="dropdown-item" href="#">New Institution Application</a></li>
+                        <li><a class="dropdown-item" href="#">Mount New Programme</a></li>
+                        <li><a class="dropdown-item" href="#">Re-Accreditation</a></li>
+                        <li><a class="dropdown-item" href="#">Standard Operation Procedure (SOP) Manual</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'nbtelog:downloads' %}">Downloads</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Linkages & Int. Col.</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<style>
+/* Navbar Styles */
+.navbar {
+    padding: 0;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.navbar-nav .nav-link {
+    padding: 1rem 0.75rem;
+    color: #333;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #006838;
+}
+
+/* Social Links */
+.social-links {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    color: #006838;
+    text-decoration: none;
+    border: 1px solid #006838;
+    transition: all 0.3s ease;
+}
+
+.social-link:hover {
+    background-color: #006838;
+    color: #ffffff;
+}
+
+/* Search Form */
+.search-container {
+    position: relative;
+    max-width: 300px;
+    margin-left: auto;
+}
+
+.search-input {
+    padding-right: 40px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+}
+
+.search-btn {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    border: none;
+    background: none;
+    padding: 0 12px;
+    color: #006838;
+}
+
+.search-btn:hover {
+    color: #004025;
+}
+
+/* Dropdown Menus */
+.dropdown-menu {
+    border: none;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+.dropdown-item {
+    padding: 0.5rem 1rem;
+}
+
+.dropdown-item:hover {
+    background-color: #f8f9fa;
+    color: #006838;
+}
+
+/* Responsive */
+@media (max-width: 991.98px) {
+    .navbar-nav {
+        padding: 1rem 0;
+    }
+    
+    .navbar-nav .nav-link {
+        padding: 0.5rem 1rem;
+    }
+    
+    .social-links {
+        justify-content: center;
+        margin-bottom: 1rem;
+    }
+    
+    .search-container {
+        margin: 0 auto;
+    }
+}
+</style> 

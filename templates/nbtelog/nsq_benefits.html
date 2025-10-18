@@ -1,0 +1,97 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Benefits of NSQ{% endblock %}
+
+{% block content %}
+<!-- Breadcrumb -->
+<div class="bg-light py-2">
+    <div class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb mb-0">
+                <li class="breadcrumb-item"><a href="{% url 'nbtelog:index' %}">Home</a></li>
+                <li class="breadcrumb-item active" style="color: #006838;">Benefits of NSQ</li>
+            </ol>
+        </nav>
+    </div>
+</div>
+
+<div class="container my-5">
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="mb-4">Benefits of NSQ</h1>
+
+            <div class="content-section">
+                <!-- To Company Section -->
+                <div class="benefit-section mb-5">
+                    <h2 class="section-title text-success mb-3">To Company</h2>
+                    <ol class="benefit-list">
+                        <li>NSQ assure quality and performance – links national standards to operations of companies</li>
+                        <li>Helps you aim for quality awards</li>
+                        <li>Gives greater confidence in management</li>
+                        <li>Demonstrates compliance with legislation</li>
+                        <li>Increases productivity and efficiency</li>
+                        <li>Help retain staff longer – saving on recruitment costs</li>
+                        <li>Cost effective way to train staff</li>
+                        <li>Increases profits</li>
+                        <li>Aid to writing contracts</li>
+                        <li>Help employer to recruit people with the required competencies</li>
+                        <li>Provides proof that employee can work to industry standards in a particular job, role or disciple</li>
+                        <li>It shows customers that an employer has competent workforce who can provide quality product/service</li>
+                        <li>Can help to structure on-the-job training</li>
+                        <li>Can help to reduce accidents as NSQs cover health and safety practices on the job</li>
+                    </ol>
+                </div>
+
+                <!-- To Individuals Section -->
+                <div class="benefit-section mb-5">
+                    <h2 class="section-title text-success mb-3">To Individuals</h2>
+                    <ol class="benefit-list">
+                        <li>Installs confidence in their abilities</li>
+                        <li>Gives a sense of motivation and achievement</li>
+                        <li>Gives a recognised qualification for existing skills without having to attend College</li>
+                        <li>Provides evidence of competency in a skill base, which could attract promotion or greater responsibility</li>
+                        <li>Recognized by employers as measure of skills and abilities (competence)</li>
+                        <li>Allows him/her to be assessed at work while doing the job</li>
+                        <li>NSQ are completed at a pace to suit each individual</li>
+                        <li>The training is highly flexible, one can choose to do a full NSQ or just Units of it and get certified for the areas covered</li>
+                        <li>If she/he changes job, the NSQ can still be used on another job requiring the same competencies</li>
+                    </ol>
+                </div>
+
+                <!-- To the Nation Section -->
+                <div class="benefit-section mb-5">
+                    <h2 class="section-title text-success mb-3">To the Nation</h2>
+                    <ol class="benefit-list">
+                        <li>Improve the economy through well trained workforce</li>
+                        <li>Help to reduce unemployment</li>
+                        <li>Helps in providing trained workforce for export</li>
+                        <li>Provide quality products and services which are competitive in the market</li>
+                    </ol>
+                </div>
+
+                <p class="mt-4"><em>Employees with NSQs are better motivated, more loyal, reliable and adaptable.</em></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .benefit-section {
+        background-color: #f8f9fa;
+        padding: 2rem;
+        border-radius: 8px;
+    }
+    .section-title {
+        font-size: 1.5rem;
+        font-weight: 600;
+    }
+    .benefit-list {
+        padding-left: 1.5rem;
+    }
+    .benefit-list li {
+        margin-bottom: 0.75rem;
+        line-height: 1.5;
+    }
+</style>
+{% endblock %} 

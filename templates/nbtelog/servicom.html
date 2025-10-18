@@ -1,0 +1,99 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+<!-- Breadcrumb -->
+<div class="bg-light py-2">
+    <div class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb mb-0">
+                <li class="breadcrumb-item"><a href="{% url 'nbtelog:index' %}">Home</a></li>
+                <li class="breadcrumb-item active" style="color: #006838;">SERVICOM</li>
+            </ol>
+        </nav>
+    </div>
+</div>
+
+<div class="container my-5">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="servicom-content">
+                <!-- SERVICOM Logo and Title -->
+                <div class="text-center mb-5">
+                    <div class="d-flex justify-content-center align-items-center mb-4">
+                        <img src="{% static 'images/servicom-logo.jpg' %}" alt="SERVICOM Logo" height="100" class="ms-3">
+                    </div>
+                </div>
+
+                <!-- Main Content -->
+                <div class="about-content">
+                    <p class="lead mb-4">
+                        SERVICOM is an acronym for Service Compact with All Nigerians. It was established in 2004 as the outcome of a Three-day Special Presidential Retreat on Service Delivery with the President, Ministers, Special Advisers, Presidential Aides and Chief Executives of major Extra-ministerial Departments and Parastatals.
+                    </p>
+
+                    <p class="mb-4">
+                        It is an initiative of the Federal Government of Nigeria conceived to promote effective and efficient service delivery in order to manage the performance expectation gap between Government and citizens as well as other members of the public on issues of service delivery.
+                    </p>
+
+                    <p class="mb-4">
+                        It virtually gives the public the right to demand good services as contained in MDAS' Service Charter. One of its goals is to ensure that users understand their rights to public services, the service standards they should expect and how to demand for these services.
+                    </p>
+
+                    <h2 class="section-title mb-4">FUNCTIONS OF THE SERVICOM UNIT OF THE BOARD</h2>
+                    <div class="functions-list">
+                        <div class="function-item">
+                            <p><strong>i.</strong> Co-ordinate the formation and operation of SERVICOM charter and service improvement plans in the Board</p>
+                        </div>
+
+                        <div class="function-item">
+                            <p><strong>ii.</strong> Monitor and report progress of the Board under SERVICOM obligations through compliance Evaluations using the SERVICOM index to carryout surveys or services and customers satisfaction, publicize charters and sensitize the citizenry to demand quality service at all times.</p>
+                        </div>
+
+                        <div class="function-item">
+                            <p><strong>iii.</strong> Co-ordination and monitoring the Board's performance.</p>
+                        </div>
+
+                        <div class="function-item">
+                            <p><strong>iv.</strong> Conducting Regular Evaluation and Ratings of Service Delivery level to measure excellence. (In collaboration with SERVICOM National headquarter Abuja)</p>
+                        </div>
+
+                        <div class="function-item">
+                            <p><strong>v.</strong> Conducting spot checks on security men/Receptionist and how polite/courteous they are.</p>
+                        </div>
+
+                        <div class="function-item">
+                            <p><strong>vi.</strong> To facilitate a safe and conducive working environment for staff at all levels of service delivery.</p>
+                        </div>
+
+                        <div class="function-item">
+                            <p><strong>vii.</strong> To institute complaints procedure including Grievance Redress mechanism at the Board</p>
+                        </div>
+
+                        <div class="function-item">
+                            <p><strong>viii.</strong> To ensure the promotion of quality assurance and best practices in the performance of our functions.</p>
+                        </div>
+
+                        <div class="function-item">
+                            <p><strong>ix.</strong> To facilitate a comprehensive and effective training policy for frontline staff on customer relations and related matters.</p>
+                        </div>
+
+                        <div class="function-item">
+                            <p><strong>x.</strong> To manage links with strategic partners and other stakeholders on service delivery, market research and customer care/relations etc.</p>
+                        </div>
+
+                        <div class="function-item">
+                            <p><strong>xi.</strong> Inauguration of SERVICOM Unit of TVET Institution in Nigeria.</p>
+                        </div>
+
+                        <div class="function-item">
+                            <p><strong>xii.</strong> To monitor the conduct of yearly promotional examination of the Board.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %} 

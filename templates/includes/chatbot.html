@@ -1,0 +1,193 @@
+<div class="chat-widget" id="chatWidget">
+    <div class="chat-header" onclick="toggleChat()">
+        <h5>NBTE Assistant</h5>
+        <span class="chat-toggle" id="chatToggle">+</span>
+    </div>
+    <div class="chat-body" id="chatBody" style="display: none;">
+        <div class="chat-messages" id="chatMessages">
+            <div class="message bot">
+                Hello! I'm your NBTE assistant. How can I help you today?
+            </div>
+        </div>
+        <div class="chat-input">
+            <input type="text" id="userInput" placeholder="Type your message...">
+            <button onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+</div>
+
+<style>
+.chat-widget {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 300px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    z-index: 1000;
+}
+
+.chat-header {
+    background: #006838;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.chat-body {
+    height: 400px;
+    display: none;
+    flex-direction: column;
+}
+
+.chat-messages {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: 10px;
+}
+
+.message {
+    margin: 5px 0;
+    padding: 8px 12px;
+    border-radius: 15px;
+    max-width: 80%;
+}
+
+.message.user {
+    background: #e9ecef;
+    margin-left: auto;
+}
+
+.message.bot {
+    background: #006838;
+    color: white;
+    margin-right: auto;
+}
+
+.chat-input {
+    padding: 10px;
+    border-top: 1px solid #dee2e6;
+    display: flex;
+}
+
+.chat-input input {
+    flex-grow: 1;
+    padding: 8px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    margin-right: 5px;
+}
+
+.chat-input button {
+    background: #006838;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.chat-input button:hover {
+    background: #004025;
+}
+
+.message.error {
+    background: #dc3545;
+    color: white;
+}
+
+.typing {
+    opacity: 0.7;
+    font-style: italic;
+}
+</style>
+
+<script>
+let chatVisible = false;
+
+function toggleChat() {
+    const chatBody = document.getElementById('chatBody');
+    const chatToggle = document.getElementById('chatToggle');
+    
+    chatVisible = !chatVisible;
+    
+    if (chatVisible) {
+        chatBody.style.display = 'flex';
+        chatToggle.textContent = '-';
+    } else {
+        chatBody.style.display = 'none';
+        chatToggle.textContent = '+';
+    }
+}
+
+function sendMessage() {
+    const input = document.getElementById('userInput');
+    const message = input.value.trim();
+    
+    if (message) {
+        // Add user message to chat
+        addMessage(message, 'user');
+        input.value = '';
+        
+        // Show typing indicator
+        const typingDiv = document.createElement('div');
+        typingDiv.className = 'message bot typing';
+        typingDiv.textContent = 'Typing...';
+        document.getElementById('chatMessages').appendChild(typingDiv);
+        
+        // Send to backend
+        fetch('/chat/', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ message: message })
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            return response.json();
+        })
+        .then(data => {
+            // Remove typing indicator
+            document.querySelector('.typing')?.remove();
+            
+            if (data.error) {
+                console.error('Chatbot error:', data.error);
+                addMessage("I'm sorry, I encountered an error. Please try again later.", 'bot error');
+            } else {
+                addMessage(data.response, 'bot');
+            }
+        })
+        .catch(error => {
+            // Remove typing indicator
+            document.querySelector('.typing')?.remove();
+            
+            console.error('Chatbot error:', error);
+            addMessage("I'm sorry, I'm having trouble connecting. Please try again later.", 'bot error');
+        });
+    }
+}
+
+function addMessage(text, type) {
+    const messagesDiv = document.getElementById('chatMessages');
+    const messageDiv = document.createElement('div');
+    messageDiv.className = `message ${type}`;
+    messageDiv.textContent = text;
+    messagesDiv.appendChild(messageDiv);
+    messagesDiv.scrollTop = messagesDiv.scrollHeight;
+}
+
+// Handle Enter key
+document.getElementById('userInput').addEventListener('keypress', function(e) {
+    if (e.key === 'Enter') {
+        sendMessage();
+    }
+});
+</script> 

@@ -1,0 +1,111 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+<!-- Breadcrumb -->
+<div class="bg-light py-2">
+    <div class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb mb-0">
+                <li class="breadcrumb-item"><a href="{% url 'nbtelog:index' %}">Home</a></li>
+                <li class="breadcrumb-item active" style="color: #006838;">About the National Board for Technical Education</li>
+            </ol>
+        </nav>
+    </div>
+</div>
+
+<div class="container my-5">
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="about-title text-center mb-4">About the National Board for Technical Education</h1>
+            
+            <!-- NBTE Building Image -->
+            <div class="about-image-container mb-4">
+                <img src="{% static 'images/slide2.jpg' %}" alt="NBTE Building" class="img-fluid rounded shadow">
+            </div>
+            
+            <!-- Main Content -->
+            <div class="about-content">
+                <p class="lead mb-4">
+                    The National Board for Technical Education (NBTE) is an organ of the Federal Ministry of Education which is charged with the responsibility of regulating Technical and Vocational Education and Training (TVET) institutions in Nigeria. The Board was created by an Act of Parliament (Act No. 9 of 11 January, 1977) as a response to the federal Government of Nigeria realization of the need to develop a critical man-power base to execute the nation's National Development Plans initiated in the 1970s.
+                </p>
+
+                <h2 class="section-title mb-3">Historical Background</h2>
+                <p class="mb-4">
+                    During the third National Development Plan (1975-1980), government had identified acute shortage of technical manpower as a major constraint towards the execution of the development plan. In response to this, government in 1972 established the then National Science and Technology Development Agency, which later became Federal Ministry of Science and Technology, which set up a Working Committee on Scientific and Technical Manpower and Science Education.
+                </p>
+
+                <p class="mb-4">
+                    The Committee produced a report on Middle-Level Technical Manpower and their training, which recommended among others, the creation of the National Board for Technical Education to be charged with the implementation of its recommendations. It was against this background that the Federal Government established the NBTE by Act No. 9 of 11 January 1977.
+                </p>
+
+                <h2 class="section-title mb-3">Legislative Framework</h2>
+                <p class="mb-4">
+                    Also, in August 1985 and January 1993 respectively, the Federal Government enacted Act 16 (Education National Minimum Standards and Establishment of Institutions) Act and Act 9, Education (National Minimum Standards and Establishment of Institutions) Amendment Act. With these acts, the functions of the Board were created and extended to include accreditation of academic programmes of all Technical and Vocational Education (TVE) institutions.
+                </p>
+                <h2 class="section-title mb-3">FUNCTIONS OF NATIONAL BOARD FOR TECHNICAL EDUCATION</h2>
+                <div class="functions-list mb-4">
+                    <p class="mb-3">
+                        The functions of the Board as contained in its enabling Act No.9 of 1977 and the amendments (Act No. 6 of 1985, and No. 9 of 1993) are as follows:
+                    </p>
+
+                    <div class="function-item mb-3">
+                        <p><strong>(a)</strong> To advise the Federal government on and co-ordinate all aspects of technical and vocational education falling outside the universities and make recommendations on the national policy necessary for the training of technicians, craftsmen and other middle level skilled manpower.</p>
+                    </div>
+
+                    <div class="function-item mb-3">
+                        <p><strong>(b)</strong> To determine, after consultation with the National Manpower Board, the Industrial Training Fund and such other bodies as it considers appropriate, the skilled and middle-level manpower needs of the country in the industrial commercial and other relevant fields for the purpose of planning, training facilities and in particular, to prepare periodic master-plan for the balanced and coordinated development of Polytechnics and such plans shall include:</p>
+                        
+                        <ul class="function-sublist ms-4 mb-3">
+                            <li><strong>i.</strong> The general programmes to be pursued by polytechnics in order to maximize the use of available facilities and avoid unnecessary duplication while ensuring that they are adequate to the manpower needs of the country.</li>
+                            <li><strong>ii.</strong> Recommendations for the establishment and location of new polytechnics as and when considered necessary.</li>
+                        </ul>
+                    </div>
+
+                    <div class="function-item mb-3">
+                        <p><strong>(c)</strong> To inquire into and advise the Federal Government on the financial needs, both recurrent and capital, of polytechnics and other technical institutions to enable them meet the objectives of producing the trained manpower needs of the country.</p>
+                    </div>
+
+                    <div class="function-item mb-3">
+                        <p><strong>(d)</strong> To receive block grants from the Federal Government and allocate them to polytechnics in accordance with such formula as may be laid down by the Federal Executive Council.</p>
+                    </div>
+
+                    <div class="function-item mb-3">
+                        <p><strong>(e)</strong> To act as the agency for channeling all external aid to polytechnics in Nigeria.</p>
+                    </div>
+
+                    <div class="function-item mb-3">
+                        <p><strong>(f)</strong> To advise on, and take steps to harmonise entry requirements and duration of courses as technical institutions.</p>
+                    </div>
+
+                    <div class="function-item mb-3">
+                        <p><strong>(g)</strong> To lay down standards of skill to be attained and to continually review such standards as necessitated by technological and national needs.</p>
+                    </div>
+
+                    <div class="function-item mb-3">
+                        <p><strong>(h)</strong> To review methods of assessment of students and trainees and to develop a scheme of national certification for technicians, craftsmen, and other skilled personnel in collaboration with ministries and organizations having technical training programmes.</p>
+                    </div>
+
+                    <div class="function-item mb-3">
+                        <p><strong>(i)</strong> To under periodic review of the terms and conditions of service of personnel in polytechnics and to make recommendations thereon to the Federal Government.</p>
+                    </div>
+
+                    <div class="function-item mb-3">
+                        <p><strong>(j)</strong> To collate, analyse and publish information relating to technical and vocational education.</p>
+                    </div>
+
+                    <div class="function-item mb-3">
+                        <p><strong>(k)</strong> To consider any matter pertaining to technical or technological education as may be referred to it from time to time by the Minister.</p>
+                    </div>
+
+                    <div class="function-item mb-3">
+                        <p><strong>(l)</strong> To carry out such other activities as are conducive to the discharge of its functions.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %} 

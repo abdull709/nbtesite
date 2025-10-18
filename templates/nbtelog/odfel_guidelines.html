@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Guidelines for ODFeL Programme{% endblock %}
+
+{% block content %}
+<!-- Breadcrumb -->
+<div class="bg-light py-2">
+    <div class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb mb-0">
+                <li class="breadcrumb-item"><a href="{% url 'nbtelog:index' %}">Home</a></li>
+                <li class="breadcrumb-item"><a href="{% url 'nbtelog:odfel' %}">ODFeL</a></li>
+                <li class="breadcrumb-item active" style="color: #006838;">Guidelines for ODFeL Programme</li>
+            </ol>
+        </nav>
+    </div>
+</div>
+
+<div class="container my-5">
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="mb-4">Guidelines for Approval to Commence the Open Distance and Flexible e-Learning Programme (ODFeL) in TVET Institutions</h1>
+
+            <div class="content-section">
+                <div class="guideline-item mb-4">
+                    <h5 class="text-success">Expression of Interest Letter:</h5>
+                    <p>Institutions should write a Letter of Expression of Interest for the Open Distance and Flexible e-Learning Programme (ODFeL), addressed to the Executive Secretary, NBTE.</p>
+                </div>
+
+                <div class="guideline-item mb-4">
+                    <h5 class="text-success">Audit Inspection:</h5>
+                    <p>A team consisting of two (2) NBTE staff members and a Resource Person will conduct an audit inspection of facilities. During the visit, the following will be checked:</p>
+                    <ul class="list-unstyled ms-4">
+                        <li><i class="fas fa-check-circle text-success me-2"></i>A robust Learning Management System (LMS)</li>
+                        <li><i class="fas fa-check-circle text-success me-2"></i>Active e-Library subscription</li>
+                        <li><i class="fas fa-check-circle text-success me-2"></i>High Speed Internet bandwidth</li>
+                        <li><i class="fas fa-check-circle text-success me-2"></i>Availability of functional computers</li>
+                        <li><i class="fas fa-check-circle text-success me-2"></i>Availability of a dedicated ODFeL Center headed by a Director, etc.</li>
+                    </ul>
+                </div>
+
+                <div class="guideline-item mb-4">
+                    <h5 class="text-success">Program Accreditation:</h5>
+                    <p>The applied-for program must have full accreditation (expired programs will NOT be considered).</p>
+                </div>
+
+                <div class="guideline-item mb-4">
+                    <h5 class="text-success">Train-the-Trainer:</h5>
+                    <p>The team will also be involved in a Train-the-Trainer exercise for the Deans and Heads of Departments of the institution.</p>
+                </div>
+
+                <div class="guideline-item mb-4">
+                    <h5 class="text-success">Documentation:</h5>
+                    <p>The institution will receive the (DRAFT) National TVET Procedures Manual and (DRAFT) National TVET Policy and Strategy on the Open Distance and Flexible e-Learning Programme (ODFeL).</p>
+                </div>
+
+                <div class="guideline-item mb-4">
+                    <h5 class="text-success">Implementation:</h5>
+                    <p>Upon approval of the audit report, the institution shall commence the implementation of the Open Distance and Flexible e-Learning (ODFeL) Programme. If deficiencies are found, the program may be denied approval.</p>
+                </div>
+
+                <!-- Share buttons -->
+                <div class="share-section mt-5">
+                    <p class="small text-muted">Share This Page</p>
+                    <div class="social-share">
+                        <a href="#" class="me-2 text-success"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="me-2 text-success"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-success"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .guideline-item h5 {
+        font-weight: 600;
+    }
+    .list-unstyled li {
+        margin-bottom: 0.5rem;
+    }
+    .social-share a {
+        text-decoration: none;
+    }
+</style>
+{% endblock %} 

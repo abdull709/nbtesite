@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Search Results - NBTE{% endblock %}
+
+{% block content %}
+<div class="container my-5">
+    <div class="row">
+        <div class="col-lg-8">
+            <div class="search-results">
+                <h2 class="mb-4">Search Results</h2>
+                
+                <!-- Search Form -->
+                <form action="{% url 'nbtelog:search' %}" method="GET" class="mb-4">
+                    <div class="input-group">
+                        <input type="search" name="q" class="form-control" value="{{ query }}" placeholder="Search...">
+                        <button class="btn btn-primary" type="submit">
+                            <i class="fas fa-search"></i> Search
+                        </button>
+                    </div>
+                </form>
+
+                {% if query %}
+                    <p class="text-muted mb-4">Showing results for: <strong>{{ query }}</strong></p>
+                    
+                    {% if results %}
+                        <div class="list-group">
+                            {% for result in results %}
+                            <div class="list-group-item">
+                                <span class="badge bg-secondary mb-2">{{ result.type }}</span>
+                                <h5 class="mb-1">
+                                    <a href="{{ result.url }}" class="text-dark">{{ result.title }}</a>
+                                </h5>
+                                {% if result.excerpt %}
+                                    <p class="mb-1">{{ result.excerpt|truncatewords:30 }}</p>
+                                {% endif %}
+                                {% if result.created_at %}
+                                    <small class="text-muted">
+                                        Published: {{ result.created_at|date:"F d, Y" }}
+                                    </small>
+                                {% endif %}
+                            </div>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        <div class="alert alert-info">
+                            No results found for your search query.
+                        </div>
+                    {% endif %}
+                {% else %}
+                    <div class="alert alert-info">
+                        Please enter a search term to find content.
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+        
+        <!-- Sidebar -->
+        <div class="col-lg-4">
+            <div class="card quick-links-card mb-4">
+                <div class="card-body">
+                    <h5 class="card-title">Quick Links</h5>
+                    <ul class="quick-links-list list-unstyled">
+                        <li><a href="#">TVET Institutions</a></li>
+                        <li><a href="#">Digital QA Portal</a></li>
+                        <li><a href="#">ODFeL Guidelines</a></li>
+                        <li><a href="#">Downloads</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %} 

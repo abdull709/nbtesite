@@ -1,0 +1,119 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Nigerian Skills Qualifications Framework (NSQF){% endblock %}
+
+{% block content %}
+<!-- Breadcrumb -->
+<div class="bg-light py-2">
+    <div class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb mb-0">
+                <li class="breadcrumb-item"><a href="{% url 'nbtelog:index' %}">Home</a></li>
+                <li class="breadcrumb-item active" style="color: #006838;">NSQF</li>
+            </ol>
+        </nav>
+    </div>
+</div>
+
+<div class="container my-5">
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="mb-4">Nigerian Skills Qualifications Framework (NSQF)</h1>
+
+            <div class="content-section">
+                <!-- What is NSQF Section -->
+                <div class="mb-5">
+                    <h2 class="section-title mb-3">What is NSQF</h2>
+                    <p class="mb-4">
+                        NSQF formerly called NVQF is a system for the development, classification and recognition of skills, knowledge, 
+                        understanding and competencies acquired by individuals, irrespective of where and how the training or skill was acquired. 
+                        The system gives a clear statement of what the learner must know or be able to do whether the learning took place in a 
+                        classroom, on-the-job, or less formally. The framework indicates the comparability of different qualifications and how one 
+                        can progress from one level to another. The framework is the structure within which the National Skills Qualifications 
+                        (NSQs) operate.
+                    </p>
+                </div>
+
+                <!-- Framework Aims Section -->
+                <div class="mb-5">
+                    <h2 class="section-title mb-3">The framework aims at</h2>
+                    <ol class="framework-list">
+                        <li>promoting lifelong learning</li>
+                        <li>providing quality assurance and recognition</li>
+                    </ol>
+                </div>
+
+                <!-- Promoting Life Long Learning Section -->
+                <div class="mb-5">
+                    <h2 class="section-title mb-3">Promoting Life Long Learning</h2>
+                    <ul class="life-long-learning-list">
+                        <li>understanding occupational learning routes and qualifications and how they relate to each other.</li>
+                        <li>providing access to vocational education and training opportunities.</li>
+                        <li>making progression routes easier and clearer.</li>
+                        <li>improving career mobility.</li>
+                        <li>increasing the scope for recognition of prior learning.</li>
+                    </ul>
+                </div>
+
+                <!-- Additional Information Section -->
+                <div class="mb-5">
+                    <p class="mb-4">
+                        Lifelong learning is necessary to enhance an individual's employability in a rapidly changing world of work. People should 
+                        have opportunities for training to meet needs arising from technological and economic development and changing career 
+                        paths.
+                    </p>
+
+                    <p class="mb-4">
+                        National Skills Qualifications Framework can offer Nigeria an instrument for promoting the development of new 
+                        qualifications, making delivery more flexible and widening the range of providers.
+                    </p>
+
+                    <p class="mt-5">
+                        <a href="#" class="text-success text-decoration-none">
+                            <i class="fas fa-download me-2"></i>Click here to download the NSQF Operation Manual
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .section-title {
+        color: #006838;
+        font-size: 1.3rem;
+        font-weight: 600;
+        margin-top: 1rem;
+    }
+    .framework-list {
+        padding-left: 1.5rem;
+    }
+    .framework-list li {
+        margin-bottom: 0.75rem;
+        line-height: 1.6;
+    }
+    .life-long-learning-list {
+        list-style: none;
+        padding-left: 0;
+    }
+    .life-long-learning-list li {
+        margin-bottom: 0.75rem;
+        line-height: 1.6;
+        position: relative;
+        padding-left: 1.5rem;
+    }
+    .life-long-learning-list li:before {
+        content: "-";
+        position: absolute;
+        left: 0;
+    }
+    .content-section {
+        background-color: #fff;
+        padding: 2rem;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+</style>
+{% endblock %} 

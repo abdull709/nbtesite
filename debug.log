@@ -1,0 +1,39 @@
+INFO 2025-06-15 17:24:45,641 views 5556 16260 Received message: what is servicom?
+INFO 2025-06-15 17:24:45,670 views 5556 16260 Found 2 active chatbot entries
+INFO 2025-06-15 17:24:45,671 views 5556 16260 Processing 2 questions for matching
+INFO 2025-06-15 17:24:45,679 views 5556 16260 Best match score: 1.0000000000000002
+ERROR 2025-06-15 17:24:45,681 views 5556 16260 Unexpected error: QuerySet indices must be integers or slices, not int64.
+Traceback (most recent call last):
+  File "C:\Users\Dambatta\Documents\nbteweb\nbtesite\nbtelog\views.py", line 261, in chat
+    response = chatbot_entries[best_match_idx].answer
+               ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "C:\Users\Dambatta\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\db\models\query.py", line 420, in __getitem__
+    raise TypeError(
+TypeError: QuerySet indices must be integers or slices, not int64.
+INFO 2025-06-17 10:11:04,415 views 12432 21796 Received message: what is servicom?
+INFO 2025-06-17 10:11:04,422 views 12432 21796 Found 2 active chatbot entries
+INFO 2025-06-17 10:11:04,426 views 12432 21796 Processing 2 questions for matching
+INFO 2025-06-17 10:11:04,516 views 12432 21796 Best match score: 1.0000000000000002
+ERROR 2025-06-17 10:11:04,521 views 12432 21796 Unexpected error: QuerySet indices must be integers or slices, not int64.
+Traceback (most recent call last):
+  File "C:\Users\Dambatta\Documents\nbteweb\nbtesite\nbtelog\views.py", line 261, in chat
+    response = chatbot_entries[best_match_idx].answer
+               ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "C:\Users\Dambatta\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\db\models\query.py", line 420, in __getitem__
+    raise TypeError(
+TypeError: QuerySet indices must be integers or slices, not int64.
+INFO 2025-06-17 10:16:41,569 views 20272 12848 Received message: what is servicom?
+INFO 2025-06-17 10:16:41,572 views 20272 12848 Found 2 active chatbot entries
+INFO 2025-06-17 10:16:41,577 views 20272 12848 Processing 2 questions for matching
+INFO 2025-06-17 10:16:41,584 views 20272 12848 Best match score: 1.0000000000000002
+INFO 2025-06-17 10:16:41,584 views 20272 12848 Using similarity match: SERVICOM stands for Service Compact with All Niger...
+INFO 2025-06-17 10:20:14,217 views 20272 12848 Received message: 2.	what is the role of the servicom department in nbte?
+INFO 2025-06-17 10:20:14,244 views 20272 12848 Found 2 active chatbot entries
+INFO 2025-06-17 10:20:14,254 views 20272 12848 Processing 2 questions for matching
+INFO 2025-06-17 10:20:14,262 views 20272 12848 Best match score: 1.0
+INFO 2025-06-17 10:20:14,262 views 20272 12848 Using similarity match: To monitor and promote efficient service delivery,...
+INFO 2025-06-17 10:33:18,561 views 20272 25236 Received message: what is servicom
+INFO 2025-06-17 10:33:18,568 views 20272 25236 Found 12 active chatbot entries
+INFO 2025-06-17 10:33:18,570 views 20272 25236 Processing 12 questions for matching
+INFO 2025-06-17 10:33:18,606 views 20272 25236 Best match score: 1.0
+INFO 2025-06-17 10:33:18,606 views 20272 25236 Using similarity match: SERVICOM stands for Service Compact with All Niger...

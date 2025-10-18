@@ -1,0 +1,37 @@
+version: "3.9"
+
+services:
+  db:
+    image: mysql:8.0
+    container_name: nbte_db
+    environment:
+      MYSQL_DATABASE: ${DB_NAME}
+      MYSQL_USER: ${DB_USER}
+      MYSQL_PASSWORD: ${DB_PASSWORD}
+      MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD}
+    healthcheck:
+      test: ["CMD-SHELL", "mysqladmin ping -h 127.0.0.1 -uroot -p$${MYSQL_ROOT_PASSWORD} --protocol=TCP --silent || exit 1"]
+      interval: 5s
+      timeout: 5s
+      retries: 30
+      start_period: 40s
+    volumes:
+      - db_data:/var/lib/mysql
+    # omit host port to avoid 3306 conflicts
+
+  web:
+    build: .
+    container_name: nbteweb
+    env_file:
+      - .env
+    depends_on:
+      db:
+        condition: service_healthy
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./media:/app/media
+      - ./static:/app/static
+
+volumes:
+  db_data:

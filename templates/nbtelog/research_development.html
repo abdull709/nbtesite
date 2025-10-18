@@ -1,0 +1,113 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load static_tags %}
+
+{% block title %}Research & Development{% endblock %}
+
+{% block content %}
+<!-- Breadcrumb -->
+<div class="bg-light py-2">
+    <div class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb mb-0">
+                <li class="breadcrumb-item"><a href="{% url 'nbtelog:index' %}">Home</a></li>
+                <li class="breadcrumb-item active" style="color: #006838;">Research & Development</li>
+            </ol>
+        </nav>
+    </div>
+</div>
+
+<div class="container my-5">
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="mb-4">Research and Innovations from TVET Institutions</h1>
+
+            <div class="documents-section">
+                <!-- Document Cards -->
+                <div class="row">
+                    <!-- Document 1 -->
+                    <div class="col-md-6 mb-4">
+                        <div class="card h-100 shadow-sm">
+                            <div class="card-body d-flex align-items-center">
+                                <div class="doc-icon me-3">
+                                    <i class="far fa-file-pdf fa-3x text-danger"></i>
+                                </div>
+                                <div class="doc-info">
+                                    <h5 class="card-title mb-2">FED POLY NEKEDE Catalog</h5>
+                                    <p class="card-text text-muted mb-2">PDF Document</p>
+                                    {% if 'documents/FED POLY NEKEDE Catalog .pdf'|static_exists %}
+                                        <a href="{% static 'documents/FED POLY NEKEDE Catalog .pdf' %}" 
+                                           class="btn btn-outline-success btn-sm"
+                                           target="_blank">
+                                            <i class="fas fa-download me-2"></i>Download PDF
+                                        </a>
+                                    {% else %}
+                                        <button class="btn btn-outline-secondary btn-sm" disabled>
+                                            <i class="fas fa-exclamation-circle me-2"></i>Document Unavailable
+                                        </button>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Document 2 -->
+                    <div class="col-md-6 mb-4">
+                        <div class="card h-100 shadow-sm">
+                            <div class="card-body d-flex align-items-center">
+                                <div class="doc-icon me-3">
+                                    <i class="far fa-file-word fa-3x text-primary"></i>
+                                </div>
+                                <div class="doc-info">
+                                    <h5 class="card-title mb-2">Federal Polytechnic Nekede Research Catalogue</h5>
+                                    <p class="card-text text-muted mb-2">Word Document (4.81 MB)</p>
+                                    {% if 'documents/FEDPOFFA_NBTE Research Catalogue_082804.pdf'|static_exists %}
+                                        <a href="{% static 'documents/FEDPOFFA_NBTE Research Catalogue_082804.pdf' %}" 
+                                           class="btn btn-outline-success btn-sm"
+                                           target="_blank">
+                                            <i class="fas fa-download me-2"></i>Download Document
+                                        </a>
+                                    {% else %}
+                                        <button class="btn btn-outline-secondary btn-sm" disabled>
+                                            <i class="fas fa-exclamation-circle me-2"></i>Document Unavailable
+                                        </button>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Share Section -->
+                <div class="share-section mt-4">
+                    <span class="small text-muted">Share This Page</span>
+                    <a href="#" class="text-success ms-2"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="text-success ms-2"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="text-success ms-2"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .card {
+        transition: transform 0.2s ease-in-out;
+        border: none;
+    }
+    .card:hover {
+        transform: translateY(-5px);
+    }
+    .doc-icon {
+        min-width: 60px;
+    }
+    .btn-outline-success {
+        border-color: #006838;
+        color: #006838;
+    }
+    .btn-outline-success:hover {
+        background-color: #006838;
+        color: white;
+    }
+</style>
+{% endblock %} 

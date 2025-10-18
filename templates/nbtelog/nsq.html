@@ -1,0 +1,125 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}National Skills Qualifications (NSQ){% endblock %}
+
+{% block content %}
+<!-- Breadcrumb -->
+<div class="bg-light py-2">
+    <div class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb mb-0">
+                <li class="breadcrumb-item"><a href="{% url 'nbtelog:index' %}">Home</a></li>
+                <li class="breadcrumb-item active" style="color: #006838;">NSQ</li>
+            </ol>
+        </nav>
+    </div>
+</div>
+
+<div class="container my-5">
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="mb-4">National Skills Qualifications (NSQ)</h1>
+
+            <div class="content-section">
+                <!-- Introduction Section -->
+                <div class="mb-5">
+                    <ol class="nsq-list">
+                        <li>NSQ is a work related, competence-based qualification with skills assessed at both the training centre and workplace.</li>
+                        <li>National Skills Qualifications (NSQs) are qualifications that show an understanding of the theory of the work in progress and also the competency of the individuals as evidenced in their specific job role issued by a recognized Awarding Body (AB).</li>
+                        <li>NSQs reflect the skills and knowledge needed to do the job effectively and reward you for the skills you already have</li>
+                        <li>NSQs are about practical performance as well as knowledge and understanding.</li>
+                        <li>NSQ standards are sector specific set by the industry themselves.</li>
+                        <li>The standards say what someone who is competent is expected to do.</li>
+                    </ol>
+                </div>
+
+                <!-- Standards Division Section -->
+                <div class="mb-5">
+                    <h2 class="section-title mb-3">The Standards have two main divisions:</h2>
+                    <ol class="nsq-list">
+                        <li>Performance which is carried out on the job</li>
+                        <li>Knowledge that people need to carry out the job. In other words, they need to know why they are doing the job, i.e. the theories.</li>
+                    </ol>
+                    <p class="mt-3">In order that performance and knowledge can be measured against these standards they are split up into separate groups heading known as Units. The Units describe the skills and knowledge needed to do the job effectively. The Units are subdivided into two categories:</p>
+                </div>
+
+                <!-- Units Section -->
+                <div class="mb-5">
+                    <p class="fw-bold text-success">Mandatory Units:</p>
+                    <p class="mb-4">are the ones that have to be completed and relate to tasks common to all activities.</p>
+
+                    <p class="fw-bold text-success">Optional Units:</p>
+                    <p class="mb-4">relate to more specific aspects of a job role and enable the qualification to be tailored to suit the individual furthermore under this category:</p>
+
+                    <ul class="list-unstyled ms-4">
+                        <li class="mb-2">- Employees can be trained and assessed at their normal place of work</li>
+                        <li class="mb-2">- An NSQ can be completed as a standalone qualification</li>
+                        <li class="mb-2">- Taking NSQs could be appropriate if you already have skills and want to improve them, or if you are starting from scratch</li>
+                        <li class="mb-2">- A government initiative to increase the skills of the workforce</li>
+                        <li class="mb-2">- NSQs are open to all ages</li>
+                    </ul>
+                </div>
+
+                <!-- NSQ Difference Section -->
+                <div class="mb-5">
+                    <p class="mb-4">NSQs are quite different from conventional qualifications such as ND or HND; they are about showing others that people are competent to do the job. They require that people can consistently show to an Assessor that they can do the job competently and answer questions associated with the job.</p>
+                </div>
+
+                <!-- Who Can Take NSQ Section -->
+                <div class="mb-5">
+                    <h2 class="section-title mb-3">Who Can Take NSQ?</h2>
+                    <p class="mb-3">NSQs are available to adults and young people alike.</p>
+                    <p class="mb-3">You can take NSQs if:</p>
+                    <ul class="list-unstyled ms-4">
+                        <li class="mb-2">- you are employed</li>
+                        <li class="mb-2">- you are unemployed or underemployed</li>
+                        <li class="mb-2">- you are studying at college and have a part time job or access to a work placement</li>
+                        <li class="mb-2">- you can also take an NSQ qualification at levels 1, 2 or 3 as part of an apprenticeship</li>
+                        <li class="mb-2">- you can also do an NSQ if you are at school</li>
+                        <li class="mb-2">- you can take NSQ to up skill or reskill oneself for future jobs</li>
+                        <li class="mb-2">- you are a graduate looking for employable skills</li>
+                    </ul>
+                </div>
+
+                <!-- Entry Requirements Section -->
+                <div class="mb-5">
+                    <h2 class="section-title mb-3">Entry Requirements</h2>
+                    <p class="mb-3">There are no minimum academic entry criteria. However, the following skills and attributes would be helpful:</p>
+                    <ol class="nsq-list">
+                        <li>Self-motivation to succeed within the industry</li>
+                        <li>Self-discipline and enthusiasm</li>
+                        <li>Shows initiative and capacity to develop organisational skills</li>
+                        <li>The ability to demonstrate that they have the potential to complete the qualifications which are part of the apprenticeship</li>
+                        <li>A willingness to learn and apply that learning in the workplace</li>
+                        <li>A willingness to work with due regard to health and safety to self and others</li>
+                        <li>A willingness to work flexibly and capacity to cope in busy conditions</li>
+                        <li>A willingness to communicate effectively with a range of people</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .section-title {
+        color: #006838;
+        font-size: 1.3rem;
+        font-weight: 600;
+    }
+    .nsq-list {
+        padding-left: 1.5rem;
+    }
+    .nsq-list li {
+        margin-bottom: 1rem;
+        line-height: 1.6;
+    }
+    .content-section {
+        background-color: #fff;
+        padding: 2rem;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+</style>
+{% endblock %} 

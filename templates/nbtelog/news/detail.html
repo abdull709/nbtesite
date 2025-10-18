@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <!-- Article Content -->
+            <article class="news-article">
+                {% if news.featured_image %}
+                    <img src="{{ news.featured_image.url }}" class="img-fluid mb-4 rounded" alt="{{ news.title }}">
+                {% endif %}
+                
+                <header class="mb-4">
+                    <h1 class="display-4">{{ news.title }}</h1>
+                    <div class="meta text-muted mb-4">
+                        <span class="author">By {{ news.author.get_full_name }}</span>
+                        <span class="date">on {{ news.created_at|date:"F d, Y" }}</span>
+                        {% if news.category %}
+                            <span class="category">in <a href="{% url 'nbtelog:news_list' %}?category={{ news.category.slug }}">{{ news.category.name }}</a></span>
+                        {% endif %}
+                    </div>
+                </header>
+
+                <div class="content">
+                    {{ news.content|linebreaks }}
+                </div>
+            </article>
+
+            <!-- Share Buttons -->
+            <div class="share-buttons mt-4">
+                <h5>Share this article</h5>
+                <div class="social-share">
+                    <!-- Add your social share buttons here -->
+                    <a href="#" class="btn btn-primary btn-sm">Facebook</a>
+                    <a href="#" class="btn btn-info btn-sm">Twitter</a>
+                    <a href="#" class="btn btn-success btn-sm">WhatsApp</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sidebar -->
+        <div class="col-md-4">
+            <!-- Related News -->
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h5 class="card-title">Related News</h5>
+                    {% if related_news %}
+                        <ul class="list-unstyled">
+                            {% for article in related_news %}
+                                <li class="mb-3">
+                                    <a href="{% url 'nbtelog:news_detail' article.slug %}">{{ article.title }}</a>
+                                    <small class="text-muted d-block">{{ article.created_at|date:"F d, Y" }}</small>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    {% else %}
+                        <p>No related articles found.</p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %} 
