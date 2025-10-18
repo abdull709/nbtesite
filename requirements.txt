@@ -3,7 +3,7 @@ numpy==1.26.4
 scipy==1.16.2
 scikit-learn>=1.4.0
 Django>=4.2
-mysqlclient
+psycopg2-binary
 gunicorn
 Pillow
 python-magic
