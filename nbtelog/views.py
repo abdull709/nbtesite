@@ -11,12 +11,33 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 import numpy as np
 import logging
+from django.templatetags.static import static
 
 logger = logging.getLogger(__name__)
 
 # Create your views here.
 def index(request):
-    slider_images = SliderImage.objects.filter(is_active=True).order_by('order')
+    slider_queryset = SliderImage.objects.filter(is_active=True).order_by('order')
+
+    if slider_queryset.exists():
+        slider_images = [
+            {
+                'url': slide.image.url,
+                'title': slide.title,
+                'caption': slide.caption,
+            }
+            for slide in slider_queryset
+        ]
+    else:
+        slider_images = [
+            {
+                'url': static(f'images/slide{i}.jpg'),
+                'title': f'Default Slide {i}',
+                'caption': '',
+            }
+            for i in range(1, 8)
+        ]
+
     latest_news = News.objects.filter(status='published').order_by('-created_at')[:3]
     
     # Get featured institutions

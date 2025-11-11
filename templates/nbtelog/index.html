@@ -8,39 +8,20 @@
 {% endblock %}
 
 {% block content %}
-<div style="display: none;">
-    Debug Image Paths:
-    <ul>
-        <li>{% static 'images/slide1.jpg' %}</li>
-        <li>{% static 'images/slide2.jpg' %}</li>
-        <li>{% static 'images/slide3.jpg' %}</li>
-        <li>{% static 'images/slide4.jpg' %}</li>
-        <li>{% static 'images/slide5.jpg' %}</li>
-        <li>{% static 'images/slide6.jpg' %}</li>
-        <li>{% static 'images/slide7.jpg' %}</li>
-    </ul>
-</div>
 <!-- Image Slider -->
 <div class="swiper main-slider mb-5">
     <div class="swiper-wrapper">
-        {% if slider_images %}
-            {% for slide in slider_images %}
-                <div class="swiper-slide">
-                    <img src="{{ slide.image.url }}" alt="{{ slide.title }}" class="w-100">
-                    {% if slide.caption %}
-                        <div class="swiper-caption">
-                            <h3>{{ slide.title }}</h3>
-                            <p>{{ slide.caption }}</p>
-                        </div>
-                    {% endif %}
-                </div>
-            {% endfor %}
-        {% else %}
-            <!-- Fallback images if no slider images are added -->
+        {% for slide in slider_images %}
             <div class="swiper-slide">
-                <img src="{% static 'images/slide1.jpg' %}" alt="Default Slide" class="w-100">
+                <img src="{{ slide.url }}" alt="{{ slide.title }}" class="w-100">
+                {% if slide.caption %}
+                    <div class="swiper-caption">
+                        <h3>{{ slide.title }}</h3>
+                        <p>{{ slide.caption }}</p>
+                    </div>
+                {% endif %}
             </div>
-        {% endif %}
+        {% endfor %}
     </div>
     <div class="swiper-pagination"></div>
     <div class="swiper-button-next"></div>
