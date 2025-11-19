@@ -10,3 +10,5 @@ python-magic
 django-environ
 dj-database-url
 whitenoise
+django-storages
+boto3

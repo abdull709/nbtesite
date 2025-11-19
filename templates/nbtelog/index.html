@@ -28,11 +28,11 @@
     <div class="swiper-button-prev"></div>
 </div>
 
-<!-- Main Content with Sidebar -->
+<!-- Main Content -->
 <div class="container">
     <div class="row">
-        <!-- Main Content -->
-        <div class="col-md-8">
+        <!-- Main Content - Full Width -->
+        <div class="col-12">
             <!-- Welcome Section -->
             <div class="welcome-section mb-5">
                 <h1 class="text-center welcome-title">Welcome to NBTE</h1>
@@ -64,49 +64,15 @@
                 </div>
             </div>
         </div>
-
-        <!-- Sidebar -->
-        <div class="col-md-4">
-            <!-- My Mail Box -->
-            <div class="card mailbox-card mb-4">
-                <div class="card-body">
-                    <h5 class="card-title">My Mail Box</h5>
-                    <p>To check your mailbox please <a href="#" class="text-success">click here</a></p>
-                </div>
-            </div>
-
-            <!-- Quick Links -->
-            <div class="card quick-links-card mb-4">
-                <div class="card-body">
-                    <h5 class="card-title">Quick Links</h5>
-                    <ul class="list-unstyled quick-links-list">
-                        <li>
-                            <a href="#" class="text-success">Click here</a> to download the Circular on Implementation of the Revised Schemes of Service for Polytechnics
-                        </li>
-                        <li>
-                            <a href="#" class="text-success">Click here</a> to download the Circular to all professional bodies on Commencement of Technology-Enabled Quality Assurance
-                        </li>
-                        <li>
-                            <a href="#" class="text-success">Click here</a> to download the Circular on the Introduction of Quick Reference (QR) Code in All Official Letters of the Board
-                        </li>
-                        <li>
-                            <a href="#" class="text-success">Click Here</a> to Visit the Nigerian Youth Skills Empowerment (NYSE) Website
-                        </li>
-                        <li>
-                            <a href="#" class="text-success">Click Here</a> to Visit the NBTE SERVICOM Unit Website
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
     </div>
 </div>
 
 <!-- News Section -->
 <div class="container mt-5">
-    <!-- Latest News Section -->
-    <div class="col-md-8">
-        <h2 class="mb-4">Latest News</h2>
+    <div class="row">
+        <!-- Latest News Section - Full Width -->
+        <div class="col-12">
+            <h2 class="mb-4">Latest News</h2>
         {% if latest_news %}
             {% for news in latest_news %}
                 <div class="card mb-4">
@@ -126,19 +92,24 @@
         {% else %}
             <p>No news available.</p>
         {% endif %}
+        </div>
     </div>
 
     <!-- Featured Institutions -->
     {% if featured_institutions %}
-        <div class="card">
-            <div class="card-body">
-                <h5 class="card-title">Featured Institutions</h5>
-                {% for institution in featured_institutions %}
-                    <div class="mb-3">
-                        <h6>{{ institution.name }}</h6>
-                        <small class="text-muted">{{ institution.location }}</small>
+        <div class="row mt-4">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Featured Institutions</h5>
+                        {% for institution in featured_institutions %}
+                            <div class="mb-3">
+                                <h6>{{ institution.name }}</h6>
+                                <small class="text-muted">{{ institution.location }}</small>
+                            </div>
+                        {% endfor %}
                     </div>
-                {% endfor %}
+                </div>
             </div>
         </div>
     {% endif %}
