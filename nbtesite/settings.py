@@ -166,7 +166,6 @@ if USE_S3:
 
     AWS_S3_ENDPOINT_URL = f"https://{os.environ.get('R2_ACCOUNT_ID')}.r2.cloudflarestorage.com"
 
-    AWS_S3_CUSTOM_DOMAIN = R2_PUBLIC_URL.replace("https://", "").rstrip("/")
     AWS_S3_SIGNATURE_VERSION = "s3v4"
     AWS_DEFAULT_ACL = None
     AWS_S3_FILE_OVERWRITE = False
