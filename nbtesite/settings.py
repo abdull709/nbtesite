@@ -164,16 +164,17 @@ if USE_S3:
     R2_ACCOUNT_ID = env("R2_ACCOUNT_ID")
     R2_PUBLIC_URL = env("R2_PUBLIC_URL")
 
-    AWS_S3_ENDPOINT_URL = f"https://{os.environ.get('R2_ACCOUNT_ID')}.r2.cloudflarestorage.com"
+    AWS_S3_ENDPOINT_URL = f"https://{R2_ACCOUNT_ID}.r2.cloudflarestorage.com"
 
-    AWS_S3_SIGNATURE_VERSION = "s3v4"
+    AWS_S3_CUSTOM_DOMAIN = R2_PUBLIC_URL.replace("https://", "").rstrip("/")
+
     AWS_DEFAULT_ACL = None
     AWS_S3_FILE_OVERWRITE = False
     AWS_QUERYSTRING_AUTH = False
 
     DEFAULT_FILE_STORAGE = "storages.backends.s3boto3.S3Boto3Storage"
 
-    MEDIA_URL = f"{AWS_S3_ENDPOINT_URL}/{AWS_STORAGE_BUCKET_NAME}/"
+    MEDIA_URL = R2_PUBLIC_URL + "/"
 else:
     MEDIA_URL = "/media/"
     MEDIA_ROOT = os.path.join(BASE_DIR, "media")
