@@ -1,6 +1,11 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.utils.text import slugify
+from urllib.parse import quote
+
+@property
+def safe_url(self):
+    return quote(self.file.url, safe=':/')
 
 class UserProfile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
