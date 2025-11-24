@@ -89,7 +89,7 @@ class Program(models.Model):
 class Document(models.Model):
     title = models.CharField(max_length=200)
     description = models.TextField(blank=True)
-    file = models.FileField(upload_to='documents/')
+    file = models.FileField(upload_to='downloads/')
     uploaded_at = models.DateTimeField(auto_now_add=True)
     
     def __str__(self):
