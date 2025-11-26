@@ -213,14 +213,46 @@ def downloads(request):
     try:
         # Fetch all documents and order by most recent
         documents = Document.objects.all().order_by('-uploaded_at')
-        
-        # Add file size information
+
+        # Compute safe file attributes to avoid touching storage in template
         for doc in documents:
+            file_url = None
+            file_name = None
+            file_size = None
+            file_ext = ''
             try:
-                doc.file.size  # This will raise an error if file is missing
-            except:
-                doc.file = None  # Set to None if file is missing
-        
+                if doc.file and getattr(doc.file, 'name', None):
+                    # Accessing .url/.size may trigger storage backend operations; guard individually
+                    try:
+                        file_url = doc.file.url
+                    except Exception:
+                        file_url = None
+
+                    try:
+                        file_size = doc.file.size
+                    except Exception:
+                        file_size = None
+
+                    try:
+                        file_name = doc.file.name
+                        if file_name and '.' in file_name:
+                            file_ext = file_name.rsplit('.', 1)[1].lower()
+                    except Exception:
+                        file_name = None
+                        file_ext = ''
+            except Exception:
+                # Any unexpected error while inspecting the file should not break the view
+                file_url = None
+                file_name = None
+                file_size = None
+                file_ext = ''
+
+            # Attach safe attributes to the model instance for template use
+            doc.file_url = file_url
+            doc.file_name = file_name
+            doc.file_size = file_size
+            doc.file_ext = file_ext
+
         context = {
             'title': 'Downloads',
             'documents': documents,

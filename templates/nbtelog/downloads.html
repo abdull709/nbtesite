@@ -36,16 +36,20 @@
                     <div class="card h-100 shadow-sm document-card">
                         <div class="card-body">
                             <div class="document-icon mb-3">
-                                {% if document.file.name|lower|endswith:'.pdf' %}
-                                    <i class="far fa-file-pdf text-danger fa-3x"></i>
-                                {% elif document.file.name|lower|endswith:'.doc' or document.file.name|lower|endswith:'.docx' %}
-                                    <i class="far fa-file-word text-primary fa-3x"></i>
-                                {% elif document.file.name|lower|endswith:'.xls' or document.file.name|lower|endswith:'.xlsx' %}
-                                    <i class="far fa-file-excel text-success fa-3x"></i>
-                                {% elif document.file.name|lower|endswith:'.ppt' or document.file.name|lower|endswith:'.pptx' %}
-                                    <i class="far fa-file-powerpoint text-warning fa-3x"></i>
+                                {% if document.file_url %}
+                                    {% if document.file_ext == 'pdf' %}
+                                        <i class="far fa-file-pdf text-danger fa-3x"></i>
+                                    {% elif document.file_ext == 'doc' or document.file_ext == 'docx' %}
+                                        <i class="far fa-file-word text-primary fa-3x"></i>
+                                    {% elif document.file_ext == 'xls' or document.file_ext == 'xlsx' %}
+                                        <i class="far fa-file-excel text-success fa-3x"></i>
+                                    {% elif document.file_ext == 'ppt' or document.file_ext == 'pptx' %}
+                                        <i class="far fa-file-powerpoint text-warning fa-3x"></i>
+                                    {% else %}
+                                        <i class="far fa-file text-secondary fa-3x"></i>
+                                    {% endif %}
                                 {% else %}
-                                    <i class="far fa-file text-secondary fa-3x"></i>
+                                    <i class="far fa-file-exclamation text-muted fa-3x" title="File unavailable"></i>
                                 {% endif %}
                             </div>
                             <h5 class="card-title text-truncate">{{ document.title }}</h5>
@@ -54,17 +58,29 @@
                             {% endif %}
                             <div class="document-meta small text-muted mb-3">
                                 <div><i class="far fa-calendar-alt me-2"></i>{{ document.uploaded_at|date:"F j, Y" }}</div>
+                                {% if document.file_size %}
                                 <div class="mt-1">
                                     <i class="far fa-file me-2"></i>
-                                    {{ document.file.size|filesizeformat }}
+                                    {{ document.file_size|filesizeformat }}
                                 </div>
+                                {% else %}
+                                <div class="mt-1 text-muted">
+                                    <i class="far fa-exclamation-circle me-2"></i>File unavailable
+                                </div>
+                                {% endif %}
                             </div>
-                            <a href="{{ document.file.url }}" 
+                            {% if document.file_url %}
+                            <a href="{{ document.file_url }}" 
                                class="btn btn-outline-success btn-sm w-100" 
                                target="_blank"
                                download>
                                 <i class="fas fa-download me-2"></i>Download
                             </a>
+                            {% else %}
+                            <button class="btn btn-outline-secondary btn-sm w-100" disabled>
+                                <i class="fas fa-ban me-2"></i>Unavailable
+                            </button>
+                            {% endif %}
                         </div>
                     </div>
                 </div>
